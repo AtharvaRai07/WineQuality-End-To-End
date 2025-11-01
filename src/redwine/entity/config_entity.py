@@ -41,3 +41,14 @@ class ModelTrainerConfig:
     l1_ratio: float
     random_state: int
     target_column: str
+
+@dataclass
+class ModelEvaluationConfig:
+    """Configuration for model evaluation process."""
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    all_params: dict
+    metric_file_name: Path
+    target_column: str
+    mlflow_uri: str

@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Red-Wine%20END-TO-END/mlruns/0/03e082ca58fa4dc98bebbb0ac33b7275/artifacts
+end_time: 1761995910626
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 03e082ca58fa4dc98bebbb0ac33b7275
+run_name: wise-toad-557
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761995910108
+status: 4
+tags: []
+user_id: mkuma

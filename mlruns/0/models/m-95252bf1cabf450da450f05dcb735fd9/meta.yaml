@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Red-Wine%20END-TO-END/mlruns/0/models/m-95252bf1cabf450da450f05dcb735fd9/artifacts
+creation_timestamp: 1761995910202
+experiment_id: '0'
+last_updated_timestamp: 1761995910613
+model_id: m-95252bf1cabf450da450f05dcb735fd9
+model_type: null
+name: model
+source_run_id: 03e082ca58fa4dc98bebbb0ac33b7275
+status: 3
+status_message: null
