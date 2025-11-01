@@ -24,8 +24,20 @@ class DataTransformationConfig:
     """Configuration for data transformation process."""
     root_dir: Path
     data_path: Path
+    target_column: str
     random_state: int
     test_size: float
     stratify: str
 
 
+@dataclass
+class ModelTrainerConfig:
+    """Configuration for model trainer process."""
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    model_name: str
+    alpha: float
+    l1_ratio: float
+    random_state: int
+    target_column: str

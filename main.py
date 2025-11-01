@@ -1,6 +1,7 @@
 from src.redwine.pipeline.data_ingestion_pipeline import DataIngestionPipeline
 from src.redwine.pipeline.data_validation_pipeline import DataValidationPipeline
 from src.redwine.pipeline.data_transformation_pipeline import DataTransformationPipeline
+from src.redwine.pipeline.model_trainer_pipeline import ModelTrainerPipeline
 from src.redwine import logger
 
 logger.info("Welcome to Red Wine Quality Prediction Project")
@@ -34,3 +35,11 @@ except Exception as e:
     logger.error(f">>>>>> Stage Data Transformation failed due to error: {e} <<<<<<")
     raise e
 
+try:
+    logger.info(f">>>>>> Stage Model Trainer started <<<<<<")
+    obj = ModelTrainerPipeline()
+    obj.initiate_model_trainer()
+    logger.info(f">>>>>> Stage Model Trainer completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.error(f">>>>>> Stage Model Trainer failed due to error: {e} <<<<<<")
+    raise e
