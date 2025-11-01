@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+        }
+
+        .result-card {
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(20, 20, 50, 0.08);
+        }
+
+        .score {
+            font-size: 3.25rem;
+            font-weight: 700;
+        }
+
+        .subtle {
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card result-card p-4">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h3 class="mb-1">Wine Quality Prediction</h3>
+                            <p class="mb-0 subtle">Model inference results</p>
+                        </div>
+                        <a href="/" class="btn btn-outline-secondary btn-sm">Back to form</a>
+                    </div>
+
+                    <hr>
+
+                    <div class="text-center my-4">
+                        <div class="badge badge-pill badge-primary p-3 mb-3">Predicted Quality</div>
+                        <div class="score">{{ prediction }}</div>
+                        <p class="subtle mt-2">Higher score indicates better wine quality</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3">Input summary</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-borderless">
+                                <tbody>
+                                    <!-- If you pass input values as a dict called `inputs`, this will render them. -->
+                                    {% if inputs is defined %}
+                                    {% for k, v in inputs.items() %}
+                                    <tr>
+                                        <th style="width:40%">{{ k.replace('_', ' ')|title }}</th>
+                                        <td>{{ v }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    {% else %}
+                                    <tr>
+                                        <td class="subtle">No input details available.</td>
+                                    </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <a href="/" class="btn btn-secondary mr-2">Try another</a>
+                        <a href="/train" class="btn btn-outline-primary">Retrain model</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
