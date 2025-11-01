@@ -17,3 +17,15 @@ class DataValidationConfig:
     STATUS_FILE: str
     unzip_data_dir: Path
     all_schema: dict
+
+
+@dataclass
+class DataTransformationConfig:
+    """Configuration for data transformation process."""
+    root_dir: Path
+    data_path: Path
+    random_state: int
+    test_size: float
+    stratify: str
+
+

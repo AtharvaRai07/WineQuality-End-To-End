@@ -1,6 +1,6 @@
 from src.redwine.constants import *
 from src.redwine.utils.common import read_yaml, create_directories
-from src.redwine.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
+from src.redwine.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(self, config_filepath = CONFIG_FILE_PATH, params_filepath = PARAMS_FILE_PATH,
@@ -38,3 +38,18 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+        params = self.params.train_test_split
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            random_state=params.random_state,
+            test_size=params.test_size,
+            stratify=params.stratify
+        )
+        return data_transformation_config
